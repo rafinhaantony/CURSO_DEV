@@ -1,7 +1,7 @@
 # 1TERMO
 Material de Aula - LOPAL / SOP / LER / ARI
 
-# LOPAL
+## LOPAL
 Linguagem de Programação em Python
 
 ## SOP
