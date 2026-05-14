@@ -1,0 +1,1 @@
+print("5 elevado a 3 é: ", 5**3)
