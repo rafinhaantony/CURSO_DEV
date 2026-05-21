@@ -25,7 +25,6 @@ class BonziEngine:
         """Trabalhador em segundo plano que processa a fila de fala."""
         # Inicialização do motor dentro da própria thread (evita erros de concorrência)
         try:
-            s
             # Tenta ajustar a voz para parecer um pouco mais aguda/robótica se disponível
             voices = self.engine.getProperty("voices")
             if voices:
