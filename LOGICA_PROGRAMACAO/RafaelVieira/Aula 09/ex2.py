@@ -19,6 +19,7 @@ def cadastro():
     print(f"Setor: {setor_funcionario}")
     print(f"Status: {status}")
     sleep(3)
+    funcionarios.append(nome_funcionario)
     return nome_funcionario, setor_funcionario, status
 
 def verificação_epi():
@@ -42,14 +43,29 @@ def verificação_epi():
         print("Obrigatoriedade de óculos de segurança")
         print("Obrigatoriedade de botas de segurança")
         print("Obrigatoriedade de protetor auditivo")
-
     elif resposta == 3:
         print("Setor Desenvolvimento de Sistemas")
         print("Obrigatoriedade de Uniforme Técnico")
-    
     elif resposta == 4:
         print("Setor Logística")
         print("Obrigatoriedade de Uniforme Técnico")
     else:
         print("Dados Inválidos!")
 
+def ultimo_treinamento():
+    ano = int(input("Informe o ano do último treinamento: "))
+    if (ano_atual - ano) > 2:
+        print("Treinamento Vencido! Encaminhar para reciclagem.")
+    else:
+        print("Treinamento Válido")
+    return ano
+
+while True:
+    menu()
+    opc = int(input("Sua opção: "))
+    if opc == 1:
+        cadastro()
+    elif opc == 2:
+        verificação_epi()
+    elif opc == 3:
+        ultimo_treinamento
