@@ -9,9 +9,15 @@ def menu():
     print("1. Cadastrar Funcionários")
     print("2. Verificação de EPIs")
     print("3. Verificar Validade de Treinamento")
+    print("4. Exibir Relatório")
+    print("5. Sair")
 
 def cadastro():
     print("Cadastro de Funcionários")
+<<<<<<< HEAD
+    funcionario = {}
+    
+=======
     nome_funcionario = input("Informe o nome do funcionário: ")
     setor_funcionario = input("Informe o setor do funcionário: ")
     status = input("Informe o status dos treinamentos [NR-10, NR-35 e Brigada]: ")
@@ -21,6 +27,7 @@ def cadastro():
     sleep(3)
     funcionarios.append(nome_funcionario)
     return nome_funcionario, setor_funcionario, status
+>>>>>>> 03dd513c70f5ff1ee8090449761048651891f6d8
 
 def verificação_epi():
     print("1. Elétrica")
