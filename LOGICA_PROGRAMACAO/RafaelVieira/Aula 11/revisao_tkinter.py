@@ -41,7 +41,7 @@ curso_entry.grid(row=1, column=1, pady=10, padx=10)
 lbl_nome_escola = tk.Label(janela, text="Escolha sua escola:", font=("Arial", 14))
 lbl_nome_escola.grid(row=2, column=0, pady=10, padx=10)
 # ComboBox = Caixa de seleção
-cmb_nome_escola= ttk.Combobox(janela, values=["SESI408","SESI05"])
+cmb_nome_escola = ttk.Combobox(janela, values=["SESI408","SESI05"])
 cmb_nome_escola.grid(row=2, column=1, pady=10, padx=10)
 
 # Botões = Botão de clique
