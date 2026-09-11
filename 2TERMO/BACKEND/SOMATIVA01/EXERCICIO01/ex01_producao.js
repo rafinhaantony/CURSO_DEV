@@ -2,8 +2,8 @@ console.log("------------------------------")
 console.log("      PRODUCAO DO TURNO       ")
 console.log("------------------------------")
 
-const pecasPorHora = 120
-const horasTurno = 8
+const pecasPorHora = entrada.question("Quantas pecas: ");
+const horasTurno = entrada.questionInt("Horas do Turno: ");
 
 const producaoTotal = pecasPorHora * horasTurno
 
