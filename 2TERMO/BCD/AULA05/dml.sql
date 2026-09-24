@@ -104,3 +104,5 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
 (NOW(),'ABERTO',0.00,1);
 
 SELECT * FROM pedido;
+
+INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, observacao)VALUES
