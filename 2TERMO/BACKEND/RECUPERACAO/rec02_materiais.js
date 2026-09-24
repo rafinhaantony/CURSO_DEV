@@ -6,6 +6,7 @@ const preco = entrada.questionFloat("Digite o preço da peça: ")
 
 const total = qtd * preco
 
-console.log(`nome da peça: ${nome}`)
-console.log(`quantidade: ${qtd}`)
-console.log(`preço ${preco}`)
+console.log(`Nome da peça: ${nome}`)
+console.log(`Quantidade: ${qtd}`)
+console.log(`Preço: ${preco}`)
+console.log(`Total: ${total}`)
