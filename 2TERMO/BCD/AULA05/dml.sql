@@ -106,3 +106,75 @@ INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
 SELECT * FROM pedido;
 
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario, observacao)VALUES
+(1, 1, 2, 5.99, "Entregar Quente"),
+(2, 1, 2, 5.99, "Entregar Quente"),
+(3, 5, 1, 5.99, "Deixar Macio"),
+(4, 5, 2, 5.99, NULL),
+(5, 6, 3, 5.99, NULL);
+
+SELECT * FROM item_pedido;
+
+INSERT INTO forma_pagamento (descricao) VALUES
+('Dinheiro'),
+('Débito'),
+('Crédito'),
+('PIX');
+
+INSERT INTO pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VALUES
+(2, 2, 19.50, '2026-10-02 08:45:00'),
+(2, 4, 0.00, NOW()),
+(3, 4, 15.00, NULL);
+
+-- EXEMPLO NOVO DE INSERÇÃO DE DADOS PORÉM COM RECUPERAÇÃO DO ÚLTIMO ID
+INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES (NOW(), 'ABERTO','0.00',1);
+SET @pedido = LAST_INSERT_ID();
+SELECT @pedido;
+
+-- ATUALIZAÇÕES E MODIFICAÇÕES DE DADOS
+-- EX01
+UPDATE cliente
+SET telefone = '19998888801'
+WHERE id_cliente = 5;
+
+-- EX02
+UPDATE produto
+SET preco = 1.00;
+-- NUNCA REALIZAR UM UPDATE SEM --- WHERE😡
+
+-- EX03
+UPDATE cliente
+SET telefone = '19997776601',
+    cidade = 'Valinhos'
+WHERE id_cliente = 6;
+
+-- EX04: AJUSTES DE VALORES
+UPDATE produto
+SET preco = preco * 1.05
+WHERE id_categoria = 1;
+
+-- EX05: AJUSTES DE ATUALIZAÇÕES CONDICIONAIS
+UPDATE produto
+SET preco = CASE 
+    WHEN preco < 10 THEN preco * 1.20 
+    ELSE preco * 1.05
+END
+WHERE ativo = TRUE;
+
+-- APAGAR DADOS DO BD
+
+-- EX01: APAGAR CLIENTE ESPECÍFICO
+DELETE FROM cliente
+WHERE id_cliente = 6
+
+-- EX02: APAGAR TODOS OS CLIENTES INATIVOS
+DELETE FROM cliente
+WHERE ativo = FALSE;
+
+-- EX03: APAGAR TODOS OS CLIENTES DE UMA CIDADE ESPECÍFICA
+DELETE FROM cliente
+WHERE cidade = 'Valinhos';
+
+-- EX04: EXCLUSÃO LÓGICA
+UPDATE cliente
+SET ativo = FALSE
+WHERE id_cliente = 2
