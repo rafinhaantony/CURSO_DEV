@@ -1,0 +1,265 @@
+/* Azul principal:  #173b57
+Azul secundário: #3e6b85
+Creme:           #f6f1e8
+Marrom café:     #6b4632
+Caramelo:        #c8955a
+Branco:          #ffffff
+Texto:           #17232d */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f1e8;
+    color: #17232d;
+    margin: 0;
+    padding: 0;
+}
+
+body > header {
+    background-color: #173b57;
+    color: white;
+    padding: 20px;
+}
+
+body > header > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: #c8955a;
+}
+
+main {
+    margin: 30px;
+}
+
+.banner {
+    background-color: #dceaf1;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.banner-conteudo {
+    padding: 20px;
+}
+
+.banner-conteudo p {
+    color: #6b4632;
+    font-size: 18px;
+}
+
+.banner-conteudo h1 {
+    color: #173b57;
+    font-size: 40px;
+}
+
+.banner-imagem img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.Sobre {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.sobre-cabecalho p {
+    color: #c8955a;
+}
+
+.sobre-cabecalho h2 {
+    color: #173b57;
+    font-size: 30px;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.Sobre p {
+    color: #5f6368;
+    line-height: 1.5;
+}
+
+.Sobre a {
+    background-color: #173b57;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.Sobre a:hover {
+    background-color: #c8955a;
+}
+
+.cafes {
+    background-color: #f6f1e8;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.secao-cabecalho {
+    text-align: center;
+}
+
+.secao-cabecalho p {
+    color: #c8955a;
+}
+
+.secao-cabecalho h2 {
+    color: #173b57;
+    font-size: 30px;
+}
+
+.lista-cafes {
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.card-cafe {
+    background-color: white;
+    border: 2px solid #e8ded0;
+    padding: 15px;
+    text-align: center;
+    width: 30%;
+}
+
+.card-cafe:hover {
+    border-color: #c8955a;
+}
+
+.card-cafe img {
+    width: 100%;
+}
+
+.card-cafe h3 {
+    color: #173b57;
+    font-size: 20px;
+}
+
+.card-cafe p {
+    color: #6b4632;
+}
+
+.card-cafe strong {
+    color: #c8955a;
+    font-size: 20px;
+}
+
+.ambiente {
+    background-color: #173b57;
+    color: white;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.ambiente-conteudo p {
+    color: #dceaf1;
+}
+
+.ambiente-conteudo h2 {
+    font-size: 30px;
+}
+
+.ambiente-conteudo a {
+    background-color: #c8955a;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.ambiente-conteudo a:hover {
+    background-color: #b17d47;
+}
+
+.ambiente-imagem img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.contato {
+    background-color: white;
+    padding: 30px;
+}
+
+.contato_cabecalho {
+    text-align: center;
+}
+
+.contato_cabecalho h2 {
+    color: #173b57;
+    font-size: 30px;
+}
+
+.contato_cabecalho p {
+    color: #5f6368;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #173b57;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e8ded0;
+}
+
+form textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #e8ded0;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #173b57;
+    color: white;
+    border: none;
+}
+
+form button:hover {
+    background-color: #c8955a;
+}
+
+footer {
+    background-color: #173b57;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+footer a:hover {
+    color: #c8955a;
+}
