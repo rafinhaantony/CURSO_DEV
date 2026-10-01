@@ -103,3 +103,20 @@ nome = "Excluir Depois";
 INSERT INTO produto (nome, preco, ativo, id_categoria) VALUES
 ("Café Espresso", 7.99, TRUE, 9999);
 -- Deu erro pois o programa não encontrou uma chave estrangeira id_categoria com valor 9999 na tabela categoria
+
+-- 18. Tente cadastrar um cliente usando 'ana@email.com'.
+-- Qual restrição impediu a operação?
+INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES
+("Matheus Silva", "matheus.silva@email.com", "19988776655", "São Paulo", TRUE);
+
+-- Deu erro por campo "email" duplicado na tabela clientes
+
+-- DELETE FROM clientes
+-- WHERE nome = "Matheus Silva";
+
+-- 19. Tente criar um pedido com id_cliente = 9999.
+-- Qual restrição impediu a operação?
+
+INSERT INTO pedido (data_pedido, status_pedido, valor_total, id_cliente) VALUES
+("2026-09-02 19:20:00", "ABERTO", 20.99, 9999)
+-- Deu erro pois o programa não encontrou uma chave estrangeira id_cliente com valor 9999 na tabela cliente
