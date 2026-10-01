@@ -178,3 +178,64 @@ WHERE cidade = 'Valinhos';
 UPDATE cliente
 SET ativo = FALSE
 WHERE id_cliente = 2
+
+SELECT * FROM cliente
+
+-- TRANSAÇÕES - SEGURANÇA PARA DML
+START TRANSACTION;
+UPDATE produto
+SET preco = preco * 2.80
+WHERE id_categoria = 1;
+
+SELECT id_produto, nome, preco 
+FROM produto
+WHERE id_categoria = 1;
+
+ROLLBACK;
+
+COMMIT;
+
+START TRANSACTION;
+UPDATE cliente SET cidade = 'Santos' WHERE id_cliente = 4;
+SELECT * FROM cliente WHERE id_cliente = 4;
+COMMIT;
+ROLLBACK;
+
+-- PROCEDIMENTO DE UMA COMPRA
+-- PASSO 1:
+INSERT INTO cliente (NOME, email, telefone, cidade, ativo) VALUES ('Carlos Silva', 'carlos.silva3@email.com', '19988887777', 'Santos', TRUE);
+SET @cliente_compra = LAST_INSERT_ID();
+
+-- PASSO 2: REALIZAR PEDIDO
+INSERT INTO pedido (data_pedido,status_pedido,valor_total,id_cliente) VALUES
+(NOW(),'ABERTO',0.00, @cliente_compra);
+SET @pedido_compra = LAST_INSERT_ID();
+
+-- PASSO 3: INSERINDO ITENS
+INSERT INTO item_pedido (id_pedido,id_produto,quantidade,preco_unitario) VALUES (@pedido_compra,1,13,13.00), (@pedido_compra,9,1,9.00);
+
+-- PASSO 4: ATUALIZANDO TOTAL E STATUS
+UPDATE pedido
+SET valor_total = 22.00,
+    status_pedido = 'PREPARANDO'
+WHERE id_pedido = @pedido_compra;
+
+-- PASSO 5: REGISTRAR PAGAMENTO
+INSERT INTO pagamento (id_pedido,id_forma_pagamento,valor,data_pagamento) VALUES (@pedido_compra,2,22.00,NOW());
+
+-- PASSO 6: CONSULTAR PEDIDO E RESULTADO
+SELECT p.id_pedido,
+       c.nome AS cliente,
+       p.status_pedido,
+       p.valor_total
+FROM pedido p
+JOIN cliente c ON c.id_cliente = p.id_cliente
+WHERE p.id_pedido = @pedido_compra;
+
+-- PASSO 7: RELATÓRIO
+-- PASSO 1:
+SELECT nome FROM cliente WHERE id_cliente = @cliente_compra;
+SELECT NOME FROM cliente WHERE id_cliente = 121;
+
+-- PASSO 2:
+SELECT * FROM pedido WHERE id_pedido = @pedido_compra;
