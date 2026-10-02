@@ -1,0 +1,43 @@
+body {
+    padding: 40px;
+}
+
+.equipe {
+    /* Ex: 01 */
+    display: flex;
+    flex-direction: row;
+
+    /* Ex: 02 */
+    gap: 30px;
+
+    /* Ex: 03 */
+    justify-content: center;
+}
+
+.area {
+    display: flex;
+    height: 400px;
+    gap: 20px;
+}
+
+#area1 {
+    display: flex;
+    align-items: flex-start;
+}
+
+#area2 {
+    display: flex;
+    align-items: center;
+}
+
+#area3{
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Ex: 05 */
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
