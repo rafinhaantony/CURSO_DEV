@@ -189,4 +189,4 @@ FROM pedido;
 
 -- COALENCE - SUBSTITUIR A INFORMAÇÃO QUE DEIXAMOS EM NULL OU NÃO DEIXAMOS
 SELECT nome, COALESCE(telefone, 'Não Informado') AS telefone
-FROM cliente
+FROM cliente;
