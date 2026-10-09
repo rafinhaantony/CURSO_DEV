@@ -5,6 +5,10 @@ Marrom café:     #6b4632
 Caramelo:        #c8955a
 Branco:          #ffffff
 Texto:           #17232d */
+header {
+    display: flex;
+    justify-content: space-between;
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +21,7 @@ body {
 body > header {
     background-color: #173b57;
     color: white;
-    padding: 20px;
+    padding: 30px 0 15px 30px;
 }
 
 body > header > a {
@@ -25,10 +29,6 @@ body > header > a {
     text-decoration: none;
     font-weight: bold;
     font-size: 30px;
-}
-
-nav {
-    margin-top: 15px;
 }
 
 nav a {
