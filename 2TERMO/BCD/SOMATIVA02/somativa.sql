@@ -1,9 +1,11 @@
 -- Active: 1788435085055@@127.0.0.1@3306@biblioteca_som2
 -- FASE 1 — DDL: CRIAÇÃO E ESTRUTURA
 
+-- Crie o banco biblioteca_som2 e selecione-o.
 CREATE DATABASE biblioteca_som2;
 USE biblioteca_som2;
 
+-- Crie a tabela respeitando RN01, RN02 e RN03.
 CREATE TABLE IF NOT EXISTS usuario (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
@@ -17,6 +19,7 @@ CREATE TABLE IF NOT EXISTS categoria (
     nome_categoria VARCHAR(100) NOT NULL UNIQUE
 );
 
+-- Crie a tabela e utilize CHECK para impedir quantidade negativa.
 CREATE TABLE IF NOT EXISTS livro (
     id_livro INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(150) NOT NULL,
@@ -30,6 +33,7 @@ CREATE TABLE IF NOT EXISTS livro (
     CONSTRAINT quantidade CHECK (quantidade_disponivel >= 0)
 );
 
+-- Crie PK, duas FKs, DEFAULTs e CHECK de status. As FKs devem impedir exclusão de usuário ou livro com histórico.
 CREATE TABLE IF NOT EXISTS emprestimo (
     id_emprestimo INT PRIMARY KEY AUTO_INCREMENT,
     data_emprestimo DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -53,6 +57,7 @@ CREATE TABLE IF NOT EXISTS pedido_encomenda (
     CONSTRAINT fk_livro_pedido FOREIGN KEY (id_livro_pedido) REFERENCES livro (id_livro)
 );
 
+-- Adicione editora VARCHAR(100) à tabela LIVRO.
 ALTER TABLE livro
 ADD COLUMN editora VARCHAR(100);
 
@@ -66,6 +71,7 @@ INSERT categoria (nome_categoria) VALUES
 ('Comédia'),
 ('Drama');
 
+-- Cadastre pelo menos 4 usuários; um deles deve ter telefone NULL.
 INSERT INTO usuario (nome, email, telefone, ativo) VALUES
 ('Rafael Antony', 'rafael.antony@email.com', 19999999999, TRUE),
 ('Mateus Oliveira', 'mateus.oliveira@email.com', 19999999998, TRUE),
@@ -74,6 +80,7 @@ INSERT INTO usuario (nome, email, telefone, ativo) VALUES
 
 SELECT * FROM usuario;
 
+-- Cadastre pelo menos 6 livros com autores, ISBNs, anos e quantidades diferentes.
 INSERT INTO livro (titulo, autor, isbn, ano_publicacao, quantidade_disponivel, editora, id_categoria) VALUES
 ('O Alquimista', 'Paulo Coelho', '978-8575427583', 1988, 15, 'Sextante', 'Romance'),
 ('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', '978-8520937679', 1943, 18, 'HarperCollins Brasil', 'Fabula'),
